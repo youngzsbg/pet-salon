@@ -26,19 +26,26 @@ function register(){
     let newPet =new pet(inputName,inputAge,inputGender,inputService,inputBreed,inputType);
     console.log(newPet);
     pets.push(newPet);
+    displayTotals();
+    //displayCards();
+    displayTable()
 }
 
 
 
 function init(){
     console.log("init");
-    let pet1= new pet("Scooby",99,"male","Grooming")
-    let pet2= new pet("Scrappy",44,"Male","Shampoo")
-    let pet3= new pet("Tweety",12,"Female","Massage")
+    let pet1= new pet("Scooby",99,"male","grooming")
+    let pet2= new pet("Scrappy",44,"Male","vaccines")
+    let pet3= new pet("Tweety",12,"Female","nails")
     //push the pets to put them in the array
     pets.push(pet1,pet2,pet3);
     //display the 3 pets on the console
     console.log(pets);
+    displayTotals();
+    //displayCards();
+    displayTable()
+
 
 
 }
