@@ -32,16 +32,16 @@ let row="";
     for (let i = 0; i < pets.length; i++) {
         let pet = pets[i];
         row+= 
-        `<tr id="${i}">
-                <td>${pet.name}</td>
-                <td>${pet.age}</td>
-                <td>${pet.gender}</td>
-                <td>${pet.service}</td>
-                <td>${pet.breed}</td>
-                <td>${pet.type}</td>
-                <td>${pet.dislikes}</td>
-                <td><button class="btn btn-danger" onclick="deletePet(${i})">Delete </button></td>
-        </tr>
+        `   <tr id="${i}">
+                    <td>${pet.name}</td>
+                    <td>${pet.age}</td>
+                    <td>${pet.gender}</td>
+                    <td>${pet.service}</td>
+                    <td>${pet.breed}</td>
+                    <td>${pet.type}</td>
+                    <td>${pet.dislikes}</td>
+                    <td><button class="btn btn-danger" onclick="deletePet(${i})">Delete </button></td>
+            </tr>
         `
     }
        
