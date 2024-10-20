@@ -1,8 +1,17 @@
 console.log("register.js")
 let pets = [];//empty array
 
+let inputName= document.getElementById("txtName");
+    let inputAge= document.getElementById("txtAge");
+    let inputGender= document.getElementById("txtGender");
+    let inputService= document.getElementById("txtService");
+    let inputBreed= document.getElementById("txtBreed");
+    let inputType= document.getElementById("txtType")
+    let inputDislikes= document.getElementById("txtDislikes");
+       
 
-function pet(name,age,gender,service,breed,type){
+
+function pet(name,age,gender,service,breed,type,dislikes){
     //properties = parameter aka value
     this.name=name;
     this.age=age;
@@ -10,28 +19,44 @@ function pet(name,age,gender,service,breed,type){
     this.service=service;
     this.breed=breed;
     this.type=type;
+    this.dislikes=dislikes;
 
 }
 
-function register(){
-    let inputName= document.getElementById("txtName").value;
-    let inputAge= document.getElementById("txtAge").value;
-    let inputGender= document.getElementById("txtGender").value;
-    let inputService= document.getElementById("txtService").value;
-    let inputBreed= document.getElementById("txtBreed").value;
-    let inputType= document.getElementById("txtType").value
+function isValid(pet){
+    let validation= true;
+    if(pet.name==""){
+        validation = false;
+        inputName.classList.add("error")
+    }
+    if (pet.service==""){
+        validation= false;
+        inputService.classList.add("error")
+    }
+    return validation
+}
 
-    console.log(inputName,inputAge,inputGender,inputService,inputBreed,inputType);
+function register(){
+    
     //create new obj
-    let newPet =new pet(inputName,inputAge,inputGender,inputService,inputBreed,inputType);
+    let newPet =new pet(inputName.value,inputAge.value,inputGender.value,inputService.value,inputBreed.value,inputType.value,inputDislikes.value);
     console.log(newPet);
+    if(isValid(newPet)==true){
     pets.push(newPet);
     displayTotals();
     //displayCards();
     displayTable()
+    }
 }
+//create deletePet function and display on console "Deleting Pet...
+function deletePet(petId){
+    console.log("Deleting pet ... "+ petId);
+    document.getElementById(petId).remove();
+    pets.splice(petId,1);
+    displayTable();
+    displayTotals();
 
-
+}
 
 function init(){
     console.log("init");

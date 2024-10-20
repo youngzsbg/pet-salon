@@ -44,3 +44,13 @@ img{
 .nails{
     background-color: darkgreen;
 }
+.error{
+    background-color: red;
+}
+.gif{
+    background-size: cover;
+    display: block;
+}
+header{
+    background-color: aquamarine;
+}

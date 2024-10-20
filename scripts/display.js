@@ -12,6 +12,7 @@ function displayCards(){
             <p>Service: ${pet.service}</p>
             <p>Breed: ${pet.breed}</p>
             <p>Type: ${pet.type}</p>
+            <p>Dislikes: ${pet.dislikes}</p>
         </div>
         `;
         console.log(card);
@@ -31,32 +32,20 @@ let row="";
     for (let i = 0; i < pets.length; i++) {
         let pet = pets[i];
         row+= 
-        `<tr>
+        `<tr id="${i}">
                 <td>${pet.name}</td>
                 <td>${pet.age}</td>
                 <td>${pet.gender}</td>
                 <td>${pet.service}</td>
                 <td>${pet.breed}</td>
                 <td>${pet.type}</td>
+                <td>${pet.dislikes}</td>
+                <td><button class="btn btn-danger" onclick="deletePet(${i})">Delete </button></td>
         </tr>
-
         `
     }
-    // .. 
-
-    //..
-
-    //..
-
- 
-
-    // instead of card use row
-
-    //row +=`<tr></tr>`
-
-    // read about HTML tables
-
-    
+       
     document.getElementById("petTable").innerHTML=row;
 }
 
+//create deletePet function and display on console "Deleting Pet..."
