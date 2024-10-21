@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <header class="regHeader">
         <div>
             <img src="img/200w.webp" class="gif"alt="">
             <h1>The Fashion pet</h1>
@@ -27,6 +27,7 @@
             <div class="mb-3">
                 <label>Name: </label>
                 <input  class="form-control"type="text" id="txtName">
+                <small class="nameValidationMsg">This is a required field</small>
             </div>
             <div class="mb-3">
                 <label>Age: </label>
@@ -44,6 +45,7 @@
                     <option value="nails">Nails</option>
                     <option value="vaccines">Vaccines</option>
                 </select>
+                <small class="serviceValidationMsg">This is a required field</small>
             </div>
             <div class="mb-3">
                 <label >Breed: </label>
@@ -107,5 +109,6 @@
    
     <script src="scripts/register.js"></script>
     <script src="scripts/display.js"></script>
+    <script src="plugins/jQuery3.7.1.js"></script>
 </body>
 </html>

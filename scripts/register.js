@@ -27,11 +27,19 @@ function isValid(pet){
     let validation= true;
     if(pet.name==""){
         validation = false;
-        inputName.classList.add("error")
+        //inputName.classList.add("error")
+        $(".nameValidationMsg").css("color","red").show();
+        
+    }else{
+        $(".nameValidationMsg").hide();
+
     }
     if (pet.service==""){
         validation= false;
-        inputService.classList.add("error")
+        //inputService.classList.add("error")
+        $(".serviceValidationMsg").css("color","red").show();
+    }else{
+        $(".serviceValidationMsg").hide();
     }
     return validation
 }
@@ -59,6 +67,8 @@ function deletePet(petId){
 }
 
 function init(){
+    $(".nameValidationMsg").hide();
+    $(".serviceValidationMsg").hide();
     console.log("init");
     let pet1= new pet("Scooby",99,"male","grooming")
     let pet2= new pet("Scrappy",44,"Male","vaccines")
