@@ -44,7 +44,8 @@ function register(){
 
     if(isValid(newService)){
         console.log(newService);
-    }
+        save(newService)
+     }
 }
 
 function init(){
