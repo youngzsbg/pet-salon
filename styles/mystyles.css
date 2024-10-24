@@ -61,3 +61,20 @@ img{
 .body{
     background-color: rgb(217, 186, 9);
 }
+
+
+
+#services{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.Service{
+    background-color: brown;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}

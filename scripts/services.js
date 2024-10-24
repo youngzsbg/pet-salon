@@ -1,3 +1,29 @@
+let Services=[]//services array attempt
+
+function displayTotals(){                                        //attempt
+    document.getElementById("total").innerHTML=Services.length;   //attempt
+}
+
+function displayCards(){
+    let card="";
+    for (let i = 0; i < Services.length; i++) {
+        let Service = Services[i];//getting current value
+        
+        card+=
+        `
+        <div class="Service">
+            <p>Title: ${Service.title}</p>
+            <p>Price: ${Service.price}</p>
+            
+        </div>
+        `;
+        console.log(card);
+        
+    }
+    document.getElementById("services").innerHTML=card;// Insert the card into HTML
+}
+
+
 //create constructor
 
 function Service(title,price){
@@ -41,10 +67,18 @@ function register(){
     //console.log("Price: "+ inputPrice);
     let newService= new Service(inputTitle,inputPrice);
     console.log("Is valid? ", isValid(newService));
+    
 
     if(isValid(newService)){
         console.log(newService);
+        Services.push(newService)// services array attempt just added
+        displayTotals();//display on html
+        displayCards();// display services in card form on html
+
         save(newService)
+        $("#txtTitle").val("")
+        $("#txtPrice").val("")
+        
      }
 }
 
@@ -58,6 +92,8 @@ function init(){
             register();
         }
     })
+    displayCards()
+    displayTotals()
     
 }
-window.onload=init
+window.onload=init 
