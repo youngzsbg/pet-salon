@@ -66,6 +66,18 @@ function deletePet(petId){
 
 }
 
+//function getServices(){
+  //  let services= read(); // this function is uner store manager
+   // let option="";
+   // for (let i = 0; i < services.length; i++) {
+     //   let service = services[i];
+      //  option+=`<option value="${service.title}">${service.title}</option>`
+        
+    //}
+    //$("#txtService").append(option);
+
+//}
+
 function init(){
     $(".nameValidationMsg").hide();
     $(".serviceValidationMsg").hide();
@@ -80,6 +92,8 @@ function init(){
     displayTotals();
     //displayCards();
     displayTable()
+    //getServices()
+    
 
 
 
